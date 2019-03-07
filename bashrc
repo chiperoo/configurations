@@ -1,10 +1,6 @@
 #export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;32m\]\[\033[01;34m\] \$\[\033[34m\] '
 
-# Calculate the current git branch (if exists)
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-# Prompt:
+# Prompt
 # show working directory (green bold), git branch (yellow bold) 
 export PS1="\[\033[01;32m\]\w\[\033[01;32m\]\[\033[01;34m\]\[\033[01;33m\]\$(parse_git_branch)\[\033[01;33m\] \[\033[34m\]\$\[\033[01;0m\] "
 
@@ -19,12 +15,14 @@ export LSCOLORS="Exfxcxdxbxegedabagacad"
 
 export PATH="$PATH:$HOME/Applications"
 
-# History
+### History ###
+###############
 HISTSIZE=5000
 HISTFILESIZE=10000
 HISTFILE=$HOME/.bash_history
 
-# Alias
+### Alias ###
+#############
 alias man='LC_ALL=C LANG=C man'
 alias mkdir='mkdir -pv'
 alias ll='ls -laghFG'
@@ -40,6 +38,17 @@ alias d='tabc'
 
 source ~/git-completion.bash
 
+# heroku autocomplete setup
+HEROKU_AC_BASH_SETUP_PATH=/Users/oranchirapuntu/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
+
+### Functions ###
+#################
+
+# Calculate the current git branch (if exists)
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 # Updates the iTerm2 profile. 
 # prod should have a red background
 # stage should have a green background
@@ -49,6 +58,3 @@ tabc() {
                                                       # "Default" to the name of your default theme
   echo -e "\033]50;SetProfile=$NAME\a"
 }
-
-# heroku autocomplete setup
-HEROKU_AC_BASH_SETUP_PATH=/Users/oranchirapuntu/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
