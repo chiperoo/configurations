@@ -107,6 +107,7 @@ source $ZSH/oh-my-zsh.sh
 alias mkdir='mkdir -pv'
 alias ll='ls -laghFG'
 alias ls='ls -GF'
+alias sshp='ssh-add ~/.ssh/id_rsa'
 
 LSCOLORS="Exfxcxdxbxegedabagacad"
 
