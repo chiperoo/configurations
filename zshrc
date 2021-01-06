@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/ochirapuntu/.oh-my-zsh"
+export ZSH="/Users/oranchirapuntu/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -108,8 +108,19 @@ alias mkdir='mkdir -pv'
 alias ll='ls -laghFG'
 alias ls='ls -GF'
 alias sshp='ssh-add ~/.ssh/id_rsa'
+alias cdw='cd ~/Documents/work/'
+alias mfa='~/.aws/mfa.sh'
 
 LSCOLORS="Exfxcxdxbxegedabagacad"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/oranchirapuntu/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
+eval "$(direnv hook zsh)"
+
+export LESS="-FRSX"
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
