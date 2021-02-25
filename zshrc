@@ -121,6 +121,7 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/oranchirapuntu/Library/Caches/heroku/autocomplet
 
 eval "$(direnv hook zsh)"
 
+unset LESS;
 export LESS="-FRSX"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
