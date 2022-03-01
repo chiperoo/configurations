@@ -55,9 +55,6 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 " We're on the fastest TTY ever
 set ttyfast
 
-" Only redraw when necessary
-set lazyredraw
-
 " Vim not vi
 set nocompatible
 
@@ -139,6 +136,9 @@ endif
 
 " Add a bit extra margin to the left
 set foldcolumn=1
+
+"This unsets the "last search pattern" register by hitting return
+nnoremap <CR> :noh<CR><CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -273,6 +273,11 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 set splitbelow                          " Open new horizontal split windows below current
 set splitright                          " Open new vertical split windows to the right
 
+set display +=lastline
+
+" Enable mouse support
+set mouse=a
+
 """"""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
@@ -281,8 +286,6 @@ set laststatus=2
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
-set display +=lastline
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -346,12 +349,6 @@ map <leader>x :e ~/buffer.md<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Netrw configs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>dd :Lexplore %:p:h<CR>
-nnoremap <Leader>da :Lexplore<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
