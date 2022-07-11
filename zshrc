@@ -124,3 +124,8 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ## Ruby version manager
 # brew install frum
 # eval "$(frum init)"
+
+# pyenv
+#if command -v pyenv 1>/dev/null 2>&1; then
+#  eval "$(pyenv init -)"
+#fi
