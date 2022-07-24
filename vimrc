@@ -11,6 +11,7 @@
 "
 " Sections:
 "    -> General
+"    -> Plugins
 "    -> VIM user interface
 "    -> Colors and Fonts
 "    -> Files and backups
@@ -60,6 +61,53 @@ set nocompatible
 
 " Always report changed lines
 set report =0
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" using vim-plug plugin manager -- junegunn/vim-plug
+call plug#begin()
+
+" sonokai colorscheme
+Plug 'sainnhe/sonokai'
+
+" monokai colorscheme
+Plug 'sickill/vim-monokai'
+
+" afterglow colorscheme
+Plug 'danilo-augusto/vim-afterglow'
+
+" angr colorscheme
+Plug 'zacanger/angr.vim'
+
+" rakr colorscheme
+Plug 'rakr/vim-colors-rakr'
+
+" railscast colorscheme
+Plug 'jpo/vim-railscasts-theme'
+
+" Vinegar (directory browser)
+Plug 'tpope/vim-vinegar'
+
+" Surround (update surroundings in pairs--parenthesis, brackets, quotes, etc)
+Plug 'tpope/vim-surround'
+
+" Ale (syntax checker and linter)
+Plug 'dense-analysis/ale'
+
+" GitGutter (shows git diff for lines changed)
+Plug 'airblade/vim-gitgutter'
+
+" Initialize plugin system
+call plug#end()
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -153,7 +201,8 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    let g:afterglow_blackout=1
+    colorscheme railscasts
 catch
 endtry
 
