@@ -75,11 +75,11 @@ endif
 " using vim-plug plugin manager -- junegunn/vim-plug
 call plug#begin()
 
-" sonokai colorscheme
-Plug 'sainnhe/sonokai'
+" vividchalk colorscheme
+Plug 'tpope/vim-vividchalk'
 
-" monokai colorscheme
-Plug 'sickill/vim-monokai'
+" palenight colorscheme
+Plug 'drewtempelmeyer/palenight.vim'
 
 " afterglow colorscheme
 Plug 'danilo-augusto/vim-afterglow'
@@ -202,7 +202,11 @@ endif
 
 try
     let g:afterglow_blackout=1
-    colorscheme railscasts
+    let g:palenight_color_overrides = {
+                \    'black': { 'gui': '#000000', "cterm": "0", "cterm16": "0" },
+                \    'white': { 'gui': '#FFFFFF', "cterm": "255", "cterm16": "F" },
+                \}
+    colorscheme palenight
 catch
 endtry
 
