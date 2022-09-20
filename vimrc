@@ -73,6 +73,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 " using vim-plug plugin manager -- junegunn/vim-plug
+"   install plugins with :PlugInstall
 call plug#begin()
 
 " vividchalk colorscheme

@@ -129,3 +129,9 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #if command -v pyenv 1>/dev/null 2>&1; then
 #  eval "$(pyenv init -)"
 #fi
+
+# configure git aliases (in terminal)
+# git config --global alias.co checkout
+# git config --global alias.br branch
+# git config --global alias.ci commit
+# git config --global alias.st status
