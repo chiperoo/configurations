@@ -110,11 +110,6 @@ alias ls='ls -GF'
 alias sshp='ssh-add ~/.ssh/id_rsa'
 alias cdw='cd ~/Documents/work/'
 alias mfa='~/.aws/mfa.sh'
-alias tt='tab_title'
-
-function tab_title() {
-  wezterm cli set-tab-title "$1"
-}
 
 LSCOLORS="Exfxcxdxbxegedabagacad"
 
